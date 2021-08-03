@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -20,6 +22,7 @@ import com.firstmeridian.ipmgmt.repository.IpPoolRepository;
 @Repository
 public class IpPoolDaoImpl implements IpPoolDao{
 
+	private static final Logger LOGGER =LoggerFactory.getLogger(IpPoolDaoImpl.class);
 	@Autowired
 	private IpPoolRepository IpPoolRepository;
 	@Autowired
@@ -27,6 +30,7 @@ public class IpPoolDaoImpl implements IpPoolDao{
 	@Override
 	public List<IpPoolEntity> findAll() {
 		// TODO Auto-generated method stub
+		LOGGER.info("####Retriving all pools####");
 		int findMaxLowerBound = IpPoolRepository.findMaxLowerBound();
 		return IpPoolRepository.findAll();
 	}
