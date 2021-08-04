@@ -21,9 +21,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "IPPOOL")
-@Getter
-@Setter
-@NoArgsConstructor
 @Data
 public class IpPoolEntity implements Serializable{
 
@@ -58,46 +55,8 @@ public class IpPoolEntity implements Serializable{
 		this.lowerBound = lowerBound;
 		this.uppperBound = uppperBound;
 	}
-	/*public IpPoolEntity() {
+	public IpPoolEntity() {
 		super();
-		// TODO Auto-generated constructor stub
-	}*/
-	public Long getPoolId() {
-		return poolId;
 	}
-	public void setPoolId(Long poolId) {
-		this.poolId = poolId;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public int getTotalCapacity() {
-		return totalCapacity;
-	}
-	public void setTotalCapacity(int totalCapacity) {
-		this.totalCapacity = totalCapacity;
-	}
-	public int getUsedCapacity() {
-		return usedCapacity;
-	}
-	public void setUsedCapacity(int usedCapacity) {
-		this.usedCapacity = usedCapacity;
-	}
-	public int getLowerBound() {
-		return lowerBound;
-	}
-	public void setLowerBound(int lowerBound) {
-		this.lowerBound = lowerBound;
-	}
-	public int getUppperBound() {
-		return uppperBound;
-	}
-	public void setUppperBound(int uppperBound) {
-		this.uppperBound = uppperBound;
-	}
-	
 	
 }

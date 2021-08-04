@@ -18,12 +18,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Data
 @Entity
 @Table(name = "IPAddress")
-@Getter
-@Setter
-@NoArgsConstructor
-@Data
 public class IPAddress implements Serializable{
 
 	/**
@@ -39,33 +36,22 @@ public class IPAddress implements Serializable{
 	@JsonBackReference
 	private IpPoolEntity ipPool;
 	
-	/*public IPAddress() {
+	public IPAddress() {
 		super();
 		// TODO Auto-generated constructor stub
-	}*/
+	}
 	public IPAddress(String ipValue, IpPoolEntity ipPool) {
 		super();
 		this.ipValue = ipValue;
 		this.ipPool = ipPool;
 	}
-	public Long getAddId() {
-		return addId;
-	}
-	public void setAddId(Long addId) {
-		this.addId = addId;
-	}
-	public String getIpValue() {
-		return ipValue;
-	}
-	public void setIpValue(String ipValue) {
-		this.ipValue = ipValue;
-	}
-	public IpPoolEntity getIpPool() {
-		return ipPool;
-	}
-	public void setIpPool(IpPoolEntity ipPool) {
-		this.ipPool = ipPool;
-	}
+	/*
+	 * public Long getAddId() { return addId; } public void setAddId(Long addId) {
+	 * this.addId = addId; } public String getIpValue() { return ipValue; } public
+	 * void setIpValue(String ipValue) { this.ipValue = ipValue; } public
+	 * IpPoolEntity getIpPool() { return ipPool; } public void
+	 * setIpPool(IpPoolEntity ipPool) { this.ipPool = ipPool; }
+	 */
 		
 	
 }
