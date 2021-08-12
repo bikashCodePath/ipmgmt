@@ -1,5 +1,7 @@
 package com.firstmeridian.ipmgmt.common.exception;
 
+import org.springframework.http.HttpStatus;
+
 public class BusinessException extends RuntimeException{
 
 	/**
@@ -10,16 +12,26 @@ public class BusinessException extends RuntimeException{
 	 * 
 	 */
 	private String errorDescription;
+	private HttpStatus status;
 	
+	public HttpStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(HttpStatus status) {
+		this.status = status;
+	}
+
 	/**
      * Creates a new <code>BusinessException</code>.
      *
      * @param titleMessage
      *            error message
      */
-    public BusinessException(String titleMessage, String description) { 
+    public BusinessException(String titleMessage, String description,HttpStatus status) { 
         super(titleMessage);
         this.errorDescription = description; 
+        this.status = status; 
     }
 
     /**
